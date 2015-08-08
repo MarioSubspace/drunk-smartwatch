@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:paddingStart="@dimen/large_padding"
+    android:paddingEnd="@dimen/large_padding"
+    android:paddingTop="@dimen/small_padding"
+    android:paddingBottom="@dimen/small_padding">
+
+    <TextView android:id="@+id/attribute_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/SensorNameStyle"
+        android:text="sensor_name"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true"/>
+
+    <TextView
+        android:id="@+id/attribute_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/SensorDataStyle"
+        android:text="data_value"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"/>
+
+</RelativeLayout>

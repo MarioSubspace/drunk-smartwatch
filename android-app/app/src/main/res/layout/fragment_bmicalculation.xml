@@ -1,0 +1,85 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context="reuiot2015.smartwatch.BMICalculationFragment">
+
+    <TextView
+        android:layout_marginTop="@dimen/large_padding"
+        android:layout_marginBottom="@dimen/large_padding"
+        android:layout_marginEnd="@dimen/small_padding"
+        android:layout_marginStart="@dimen/small_padding"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SUPER SECRET BMI CALCUATOR"
+        android:textColor="@color/textPrimary"
+        android:textStyle="bold"/>
+
+    <LinearLayout
+        android:layout_marginStart="@dimen/small_padding"
+        android:layout_marginEnd="@dimen/small_padding"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+        <EditText
+            android:id="@+id/edit_text_height_a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:maxEms="3"
+            android:minEms="3"/>
+        <TextView
+            style="@style/heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  ft.    "/>
+        <EditText
+            android:id="@+id/edit_text_height_b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:nextFocusLeft="@id/edit_text_height_a"
+            android:maxEms="3"
+            android:minEms="3"/>
+        <TextView
+            style="@style/heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  in."/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginBottom="@dimen/large_padding"
+        android:layout_marginStart="@dimen/small_padding"
+        android:layout_marginEnd="@dimen/small_padding"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+        <EditText
+            android:id="@+id/edit_text_weight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:nextFocusUp="@id/edit_text_height_b"
+            android:nextFocusLeft="@id/edit_text_height_b"
+            android:maxEms="3"
+            android:minEms="3"/>
+        <TextView
+            style="@style/heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  lbs."/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button_calculate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/small_padding"
+        android:background="@android:color/black"
+        android:text="Calculate"
+        android:layout_gravity="center"/>
+
+</LinearLayout>

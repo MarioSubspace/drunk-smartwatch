@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Smart Watch</string>
+    <string name="title_profile_settings">Profile Settings</string>
+
+    <string name="action_settings">Data Settings</string>
+    <string name="action_save_data">Save Session Data</string>
+    <string name="action_load_profile">Load Profile</string>
+    <string name="action_profile_settings">Profile Settings</string>
+    <string name="action_exit">Exit Service</string>
+
+    <string name="sensors_list_label">SENSOR LIST</string>
+
+    <string-array name="blood_type_array">
+        <item>O+</item>
+        <item>O-</item>
+        <item>A+</item>
+        <item>A-</item>
+        <item>B+</item>
+        <item>B-</item>
+        <item>AB+</item>
+        <item>AB-</item>
+        <item>UNK</item>
+    </string-array>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

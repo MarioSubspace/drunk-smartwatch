@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileSettingsActivity">
+
+    <Button android:id="@+id/button_save_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save Profile"
+        android:layout_alignParentBottom="true"
+        android:onClick="onSaveProfile"/>
+
+    <ScrollView android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_above="@id/button_save_profile">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Age"
+                android:padding="@dimen/large_padding"
+                android:gravity="center_horizontal"
+                style="@style/heading"/>
+            <EditText
+                android:id="@+id/edit_text_age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:cursorVisible="false"
+                android:maxEms="3"
+                android:minEms="3"
+                android:inputType="number"
+                android:gravity="center_horizontal"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Blood Type"
+                android:padding="@dimen/large_padding"
+                android:gravity="center_horizontal"
+                style="@style/heading"/>
+            <Spinner
+                android:id="@+id/spinner_blood_type"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal">
+            </Spinner>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Body Mass Index (BMI)"
+                android:padding="@dimen/large_padding"
+                android:gravity="center_horizontal"
+                style="@style/heading"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+                <EditText android:id="@+id/edit_text_bmi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:cursorVisible="false"
+                    android:maxEms="3"
+                    android:minEms="3"
+                    android:inputType="numberDecimal" />
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sex"
+                android:padding="@dimen/large_padding"
+                android:gravity="center_horizontal"
+                style="@style/heading"/>
+            <RadioGroup
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <RadioButton android:id="@+id/radio_button_male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Male    "/>
+                <RadioButton android:id="@+id/radio_button_female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Female"/>
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="UUID"
+                android:padding="@dimen/large_padding"
+                android:gravity="center_horizontal"
+                style="@style/heading"/>
+            <EditText android:id="@+id/edit_text_uuid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:cursorVisible="false"
+                android:gravity="center_horizontal"
+                android:textSize="12sp"/>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp">
+                <Button android:id="@+id/button_generate_uuid"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="GENERATE"
+                    android:onClick="generateUUID"/>
+                <Button android:id="@+id/button_default_uuid"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="DEFAULT"
+                    android:onClick="defaultUUID"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

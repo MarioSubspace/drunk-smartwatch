@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\Alex\AndroidStudioProjects\SmartWatch\app\libs\microsoft-band-1.3.10428.1-javadoc.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="830781078b1214480cdc284fbdddcbe318a5a62b">
+        <dex dex="C:\Users\Alex\AndroidStudioProjects\SmartWatch\app\build\intermediates\pre-dexed\debug\microsoft-band-1.3.10428.1-javadoc-293096c87e1e613d5c66395997d80ee28f618301.jar" />
+    </item>
+    <item
+        jar="C:\Users\Alex\AndroidStudioProjects\SmartWatch\app\libs\microsoft-band-1.3.10428.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="f3da45109884b30fbfd70e3bd2835d99a730acd8">
+        <dex dex="C:\Users\Alex\AndroidStudioProjects\SmartWatch\app\build\intermediates\pre-dexed\debug\microsoft-band-1.3.10428.1-53f070ce57676caa5670f311b519d0e6cc352982.jar" />
+    </item>
+
+</items>

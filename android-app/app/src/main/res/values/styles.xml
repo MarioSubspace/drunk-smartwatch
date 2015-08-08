@@ -1,0 +1,44 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="android:Theme.Material">
+        <item name="android:colorAccent">@color/textPrimary</item>
+        <item name="android:textColorPrimary">@color/textPrimary</item>
+    </style>
+
+    <style name="SensorHeaderStyle">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/textPrimary</item>
+    </style>
+
+    <style name="SensorNameStyle">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#ddd</item>
+    </style>
+
+    <style name="SensorDataStyle">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#ddd</item>
+    </style>
+
+    <style name="heading">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/textPrimary</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ConsoleStyle">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/textPrimary</item>
+        <item name="android:background">#222</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="TimestampStyle">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/textPrimary</item>
+        <item name="android:background">#2d2d2d</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+</resources>

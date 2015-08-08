@@ -1,0 +1,21 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="reuiot2015.smartwatch.ProfileSelectFragment">
+
+    <TextView
+        android:padding="@dimen/large_padding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Profile"
+        android:background="#1a1a1a"
+        style="@style/heading"/>
+
+    <ListView android:id="@+id/list_view_profiles"
+        android:layout_marginBottom="@dimen/large_padding"
+        android:layout_width="225dp"
+        android:layout_height="200dp" />
+
+
+</LinearLayout>

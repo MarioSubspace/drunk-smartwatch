@@ -1,0 +1,8 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="large_padding">16dp</dimen>
+    <dimen name="small_padding">8dp</dimen>
+
+    <!-- Sensor View dimensions -->
+    <dimen name="data_top_padding">4dp</dimen>
+</resources>

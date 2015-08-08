@@ -1,0 +1,111 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context="reuiot2015.smartwatch.BMICalculationFragment">
+
+    <TextView
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/large_padding"
+        android:layout_marginBottom="@dimen/large_padding"
+        android:layout_marginEnd="@dimen/small_padding"
+        android:layout_marginStart="@dimen/small_padding"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SUPER SECRET EBAC CALCUATOR"
+        android:textColor="@color/textPrimary"
+        android:textStyle="bold"/>
+
+    <LinearLayout
+        android:layout_marginBottom="@dimen/large_padding"
+        android:layout_marginStart="@dimen/small_padding"
+        android:layout_marginEnd="@dimen/small_padding"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+        <EditText
+            android:id="@+id/edit_text_ebac"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/small_padding"
+            android:hint="EBAC"
+            android:inputType="numberDecimal"
+            android:cursorVisible="false"
+            android:maxEms="3"
+            android:minEms="3"/>
+
+        <EditText
+            android:id="@+id/edit_text_sd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/small_padding"
+            android:hint="#DKS"
+            android:inputType="numberDecimal"
+            android:cursorVisible="false"
+            android:maxEms="3"
+            android:minEms="3"/>
+
+        <EditText
+            android:id="@+id/edit_text_weight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/small_padding"
+            android:hint="LBS"
+            android:inputType="numberDecimal"
+            android:cursorVisible="false"
+            android:maxEms="3"
+            android:minEms="3"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginBottom="@dimen/large_padding"
+        android:layout_marginStart="@dimen/small_padding"
+        android:layout_marginEnd="@dimen/small_padding"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <EditText
+            android:id="@+id/edit_text_period"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/small_padding"
+            android:hint="HRS"
+            android:inputType="numberDecimal"
+            android:cursorVisible="false"
+            android:maxEms="3"
+            android:minEms="3"/>
+
+        <RadioGroup
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:id="@+id/radio_button_male"
+                android:text="Ma"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/small_padding"/>
+            <RadioButton
+                android:id="@+id/radio_button_female"
+                android:text="Fe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button_calculate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/small_padding"
+        android:background="@android:color/black"
+        android:text="Calculate"
+        android:layout_gravity="center"/>
+
+</LinearLayout>
