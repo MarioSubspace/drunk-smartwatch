@@ -1,0 +1,18 @@
+\section{Methodology}
+Research involved people to volunteer in a study that would take roughly two hours in their own home with no monetary compensation, but alcoholic drinks provided free of charge. During the study, volunteers would be measured (height in inches) and weighed (weight in pounds and converted to Kg). This information was recorded and used to determine the amount of alcohol required for the user to reach a BAC of .08 in 1.5 hours by the following formula:
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=.40]{formula.png}
+	\caption{EBAC Formula}
+\end{figure}
+
+The volunteer was then given the Microsoft Band to wear on the wrist of their dominant hand and data collection began. Over the course of two hours, the volunteer participated in simple card games while drinking a predetermined number of 1.5oz. of 60 proof liquor shots. While the volunteer took his drink, a researcher would hold the button on the application in order to label and record the event. Also, right before the second shot and every 25 minutes following, the volunteers BAC was measured with the use of a breathalyzer and then recorded in the application. After 1.5 hours, the volunteer ceased drinking but data collection from the smartwatch and breathalyzer continued. At the end of the two hours, BAC was measured one final time and recorded. Data then collection ended and the Microsoft Band was removed. The volunteer was advised to remain safe within their home until sober. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=.28]{datacollectionprocess.png}
+	\caption{Data collection}
+\end{figure}
+
+Collected data was uploaded to a web server and then stored on a mySQL database to be used for visualization of data on a web client. Data was also reviewed for clean up and to find any correlations between the sensor data and measure BAC. This data was then used to train a machine learning model. 
