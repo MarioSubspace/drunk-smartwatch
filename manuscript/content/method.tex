@@ -1,18 +1,19 @@
 \section{Methodology}
-Research involved people to volunteer in a study that would take roughly two hours in their own home with no monetary compensation, but alcoholic drinks provided free of charge. During the study, volunteers would be measured (height in inches) and weighed (weight in pounds and converted to Kg). This information was recorded and used to determine the amount of alcohol required for the user to reach a BAC of .08 in 1.5 hours by the following formula:
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=.40]{../figs/formula.png}
-	\caption{EBAC Formula}
-\end{figure}
+In this section, we will describe how we collected the data, we will present an analysis of the data, and then lead into the discussion of the machine learning models used.
 
-The volunteer was then given the Microsoft Band to wear on the wrist of their dominant hand and data collection began. Over the course of two hours, the volunteer participated in simple card games while drinking a predetermined number of 1.5oz. of 60 proof liquor shots. While the volunteer took his drink, a researcher would hold the button on the application in order to label and record the event. Also, right before the second shot and every 25 minutes following, the volunteers BAC was measured with the use of a breathalyzer and then recorded in the application. After 1.5 hours, the volunteer ceased drinking but data collection from the smartwatch and breathalyzer continued. At the end of the two hours, BAC was measured one final time and recorded. Data then collection ended and the Microsoft Band was removed. The volunteer was advised to remain safe within their home until sober. 
+\subsection{Collection}
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=.28]{../figs/datacollectionprocess.png}
-	\caption{Data collection}
-\end{figure}
+Our collection began with the development of an Android application that connected to a Microsoft Band smartwatch and collected data from all of its available sensors. This development led to the general Android-based sensor gateway discussed in the previous section. Next, we developed a general procedure for our volunteers to follow during the collection of data. Our volunteers were eager to freely contribute the anonymous data used in this paper. The system collected the data into a .csv file on the Android smartphone and was also transmitted to a central MySQL server.
 
-Collected data was uploaded to a web server and then stored on a mySQL database to be used for visualization of data on a web client. Data was also reviewed for clean up and to find any correlations between the sensor data and measure BAC. This data was then used to train a machine learning model. 
+The Android platform was version 5.0 (kernel 3.4.0-4432708) running on a Samsung S5 smartphone. The Microsoft Band was Build Version 10.2.2818.0 09 R. Samples of the sensor data were collected every three seconds, based on the update speed of the Band's heart rate sensor. For every sample, the most recent sensor value was used for every sensor if available, else it would use the last updated value; or in the case of the accelerometer and gyroscope sensors, the last three values were averaged with linear weighting (the most recent having the most importance). There may be a better weighting, but this weighting was suitable for our purposes.
+
+We designed a simple, two-hour procedure for the collection of the data. First, we established some necessary information about the subject to estimate the amount of alcohol necessary to reach 0.08 BAC in a 1.5 hour period using the Widmark equation (1). The particular formulation of it we used is the following: \begin{equation}
+SD =  BW \cdot Wt \cdot (EBAC + (MR \cdot DP)) \cdot 0.4690
+\end{equation} where $SD$ is the number of standard drinks (10 grams ethanol), $BW$ is the body water contant (0.58 for men and 0.49 for women), Wt is the body weight in lbs, EBAC is the estimated BAC, MR is the metabolism rate (0.17 for women and 0.18 for men), DP is the drinking period in hours, and  $0.4690 = 0.4536 \div (0.806 \cdot 1.2)$, a combination of two constants from the equation and a converstion from kg to lbs \cite{Andersson:2009}\cite{Wiki:BAC}. This amount was used to estimate the number of standard drinks to be consumed over the set time period, distributed over equal intervals. During this process, at every 25 minutes we took a measurement of the BAC using a BACtrack Trace\textsuperscript{TM} Pro breathalyzer. This measurement interval was determined by the cooldown rate of the breathalyzer. The activity chosen for the volunteers to engage in was a card or board game of their choice. Drinking stopped before 1.5 hours while collection and BAC measurement continued for another 30-45 minutes.
+
+\subsection{Data Analysis}
+
+\subsection{Feature Selection}
+
+\subsection{Model Building}
