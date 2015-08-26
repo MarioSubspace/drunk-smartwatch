@@ -14,6 +14,37 @@ SD =  BW \cdot Wt \cdot (EBAC + (MR \cdot DP)) \cdot 0.4690
 
 \subsection{Data Analysis}
 
+The Microsoft Band we used has an assortment of interesting physical and virtual sensors that we can look at, including: an accelerometer, a gyroscope, distance, heart rate, pedometer, skin temperature, and ultraviolet level. With the sample size of five volunteers and a controlled setting for the experiments, some will not be as useful for this study: distance, pedometer, and ultraviolet level. In fact, their usefulness may be limited even with larger datasets. 
+
+We begin our analysis with the heart rate (HR) by normalizing the heart rates and BACs per subject. This way we can plot and compare the HR values over the BAC and see if there are any obvious patterns. Doing this we get the plots shown in Figure \ref{fig:heart_rate_facet}.
+
+\begin{figure}
+	\includegraphics[width=1.0\textwidth]{../figs/heart_rates}
+	\caption{Heart Rate and BAC per subject (normalized).}
+	\label{fig:heart_rate_facet}
+\end{figure}
+
+The heart rate increases over time for three of the subjects (0, 2, 3) at different rates, decreases for one (4), and stays level for one (1). These observations are consistent with data in \cite{Assaad:2006}; a study where the authors relate low and high HR responses to behavioral traits. Interestingly, most of the subjects seem to show two patterns of HR activity. One is the baseline HR activity, and another is an excitied HR activity that seems to have better correlation with BAC. This is most clearly seen in the plot for subject 0, shown in Figure \ref{fig:heart_rate_split}. It's not a consistent pattern, however. Subject 1 had a very level heart rate with spikes at the regular drinking intervals, and subject 2 had relatively little variance throughout. Overall, it seems that experiencing excitement while intoxicated results in a more exaggerated HR response than while sober. This may be useful information for determining drunkenness.
+
+\begin{figure}
+	\includegraphics[width=1.0\textwidth]{../figs/heart_rate_split}
+	\caption{Heart rate split into baseline and excited states.}
+	\label{fig:heart_rate_split}
+\end{figure}
+
+Next, we plotted the normalized skin temperature over time on top of the normalized BAC values; this is shown in Figure \ref{fig:skin_temperatures}. Visually, we see that the correlation of skin temperature and BAC is highly significant. This is because of the well known vasodilation effect of alcohol causing warm blood to come near the surface of the skin \cite{Dekker:1999}. It is also known that with a high enough level of intoxication it behaves as a vasoconstrictor and drops skin temperature, which we see with subjects 4 and 5 who had reached the highest BAC of the group. Subject 2 had a rapid decrease in temperature at the beginning (we may have started collection too soon before the smartwatch sensor adjusted to his skin temperature), it may be appropriate to discard this portion.
+
+\begin{figure}
+	\includegraphics[width=1.0\textwidth]{../figs/skin_temperatures}
+	\caption{Skin Temperature and BAC per subject (normalized).}
+	\label{fig:skin_temperatures}
+\end{figure}
+
+The movement sensors (accelerometer and gyroscope) were not too interesting visually or statistically. They might have some hidden patterns that contribute to the performance of a modeling technique. We think it's usefulness will be increased if we can use it first to predict whether a user is taking a drink, then provide a time-based aggregate of the estimated number of drinks as a feature in our model to determine drunkenness.
+
 \subsection{Feature Selection}
 
+
+
 \subsection{Model Building}
+
