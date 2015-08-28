@@ -42,9 +42,14 @@ Next, we plotted the normalized skin temperature over time on top of the normali
 
 The movement sensors (accelerometer and gyroscope) were not too interesting visually or statistically. They might have some hidden patterns that contribute to the performance of a modeling technique. We think it's usefulness will be increased if we can use it first to predict whether a user is taking a drink, then provide a time-based aggregate of the estimated number of drinks as a feature in our model to determine drunkenness.
 
-\subsection{Feature Selection}
+\subsection{Features Setup}
 
+Skin temperature and heart rate will have different ranges of values unique to each subject, so per-subject normalization must be performed to put them on the same scale. A simple unity-based normalization (min-max) is used to put the feature values in the range 0 to 1. No transformations are applied to the movement data.
 
+\subsection{Models and Tools}
 
-\subsection{Model Building}
+We will be taking a look at BAC prediction as both a classification and regression problem. As a classification problem, we will threshold the BAC values at a point where we may want to warn the user. This allows the data to be used as a binary classification problem. For this we will use: decision trees, kNN, logistic regression, and SVM. 
 
+As a regression problem, we will be attempting to predict the observed BAC directly. To do this, we will use linear regression, kNN and neural networks. Using a regression approach, this will allow a user to select their own threshold rather than the threshold determined in a classification model. We may however want the threshold to be fixed.
+
+All work will be performed in R version 3.2.1 using the 'caret' package. Specifics of the tuning parameters and setup will be described in the evaluation for each model along with the results. The evaluation metrics will include standard classification performance measures, such as: specificity, AUC, and F-score; along with RMSE for the regression models. Reported scores will be the mean cross-validation score to get a better idea of model performance on unseen data.
