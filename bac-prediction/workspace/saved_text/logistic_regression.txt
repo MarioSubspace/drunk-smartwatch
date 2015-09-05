@@ -1,0 +1,26 @@
+trainSplit: 0.8 threshold: 0.065 
+
+
+Splitting into training and test partitions.
+Total of 233538 rows.
+Selected 186831 rows for training set,  46707 for test.
+Normalizing columns per subject...
+
+Heart Rate Summary:
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+ 0.0000  0.2500  0.3500  0.3714  0.4839  1.0000 
+Skin Temperature Summary:
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+ 0.0000  0.4323  0.7545  0.6387  0.8522  1.0000 
+
+Applying BAC threshold...
+ DRUNK  SOBER 
+150458  83080 
+       actual
+pred    DRUNK SOBER
+  DRUNK 21918  3811
+  SOBER  8105 12873
+
+Precision: 0.8518792 
+Recall: 0.7300403 
+F1-score: 0.7862678 

@@ -1,0 +1,55 @@
+trainSplit: 0.8 threshold: 0.065 
+reduce: 0.5 
+
+Total of 233538 rows.
+Selected 116769 rows for training set,  116769 for test.
+Reduced dataset to 116769 rows.
+
+
+Splitting into training and test partitions.
+Total of 116769 rows.
+Selected 93416 rows for training set,  23353 for test.
+Normalizing columns per subject...
+
+Heart Rate Summary:
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+ 0.0000  0.2540  0.3548  0.3726  0.4884  1.0000 
+Skin Temperature Summary:
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+ 0.0000  0.4323  0.7545  0.6391  0.8522  1.0000 
+
+Applying BAC threshold...
+DRUNK SOBER 
+75426 41343 
+
+Training SVM model...
+Support Vector Machine object of class "ksvm" 
+
+SV type: C-svc  (classification) 
+ parameter : cost C = 75 
+
+Gaussian Radial Basis kernel function. 
+ Hyperparameter : sigma =  0.217072641070747 
+
+Number of Support Vectors : 28332 
+
+Objective Function Value : -2006063 
+Training error : 0.119626 
+
+       actual
+pred    DRUNK SOBER
+  DRUNK 56351  7117
+  SOBER  4058 25890
+
+Train Precision: 0.8878648 
+Train Recall: 0.9328246 
+Train F1-score: 0.9097895 
+
+       actual
+pred    DRUNK SOBER
+  DRUNK 13986  1779
+  SOBER  1031  6557
+
+Test Precision: 0.8871551 
+Test Recall: 0.9313445 
+Test F1-score: 0.9087129 

@@ -1,0 +1,28 @@
+reduce: 0.08 , trainSplit: 0.7 
+hidden: 2 4 
+
+Reducing data set (training set as overall).
+Total of 233538 rows.
+Selected 18684 rows for training set,  214854 for test.
+
+Splitting into training and test partitions.
+Total of 18684 rows.
+Selected 13079 rows for training set,  5605 for test.
+Normalizing columns per subject...
+
+Heart Rate Summary:
+     Min.   1st Qu.    Median      Mean   3rd Qu.      Max. 
+0.0000000 0.2456140 0.3650794 0.3812216 0.5000000 1.0000000 
+Skin Temperature Summary:
+     Min.   1st Qu.    Median      Mean   3rd Qu.      Max. 
+0.0000000 0.4199396 0.7492447 0.6333903 0.8494624 1.0000000 
+
+Saving model to ann.mdl
+
+Performance on training data:
+R-squared: 0.3494990934 
+Performance on test data:
+R-squared: 0.3520431589 
+
+   user  system elapsed 
+ 12.463   3.404  15.876 
