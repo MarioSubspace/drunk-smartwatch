@@ -48,8 +48,8 @@ Skin temperature and heart rate will have different ranges of values unique to e
 
 \subsection{Models and Tools}
 
-We will be taking a look at BAC prediction as both a classification and regression problem. As a classification problem, we will threshold the BAC values at a point where we may want to warn the user. This allows the data to be used as a binary classification problem. For this we will use: logistic regression, decision trees, and kNN. 
+We will be taking a look at BAC prediction as both a classification and regression problem. As a classification problem, we will threshold the BAC values at a point where we may want to warn the user. This allows the data to be used as a binary classification problem. For this we will use logistic regression and SVM. 
 
-As a regression problem, we will be attempting to predict the observed BAC directly. To do this, we will use linear regression and neural networks. Using a regression approach, this will allow a user to select their own threshold rather than the threshold determined in a classification model. We may however want the threshold to be fixed.
+As a regression problem, we will be attempting to predict the observed BAC directly. To do this, we will use linear regression and artificial neural networks (ANN). Using a regression approach, this will allow a user to select their own threshold rather than the threshold determined in a classification model. We may however want the threshold to be fixed.
 
-All work will be performed in R version 3.2.1 using the 'caret' package. Specifics of the tuning parameters and setup will be described in the evaluation for each model along with the results. The evaluation metrics will include standard classification performance measures, such as: specificity, AUC, and F-score; along with RMSE for the regression models. Reported scores will be the mean cross-validation score to get a better idea of model performance on unseen data.
+All work will be performed in R version 3.2.1 using the additional 'neuralnet' and 'kernlab' packages. Any necessary information will be provided in the evaluation section. To evaulate the models will use some standard performance measures: precision, recall, and F1-score, for the classification models; RMSE and R$^2$ for the regression models.
