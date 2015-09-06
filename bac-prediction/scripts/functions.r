@@ -316,7 +316,7 @@ runSVM <- function(data, reduce, k, threshold, soberWeight=1, toFile=NULL) {
 #   toFile - the file to save the output to.
 runANN <- function(data, reduce, k, hidden, toFile=NULL) {
     require('ggplot2')
-    require('neuralnet')
+    require('nnet')
     
     if (!is.null(toFile)) sink(file=toFile)
     
@@ -324,9 +324,11 @@ runANN <- function(data, reduce, k, hidden, toFile=NULL) {
     cat("hidden:", hidden, "\n\n")
     
     # INITIAL DATA SETUP.
-    set.seed(1234)
-    data <- data[sample(1:nrow(data), floor(nrow(data)*reduce)),]
-    cat("Dataset subsampled to",nrow(data),"samples.\n")
+    if (reduce < 1) {
+        set.seed(1234)
+        data <- data[sort(sample(1:nrow(data), floor(nrow(data)*reduce))),]
+        cat("Dataset subsampled to",nrow(data),"samples.\n")
+    }
     
     cat("Shuffling dataset.\n")
     shuf <- shuffleUniform(data)
@@ -347,26 +349,28 @@ runANN <- function(data, reduce, k, hidden, toFile=NULL) {
     
     perf <- data.frame(vrsq=numeric(), vrmse=numeric())
     
+    bestTest.rsq <- 0
+    bestTest <- numeric()
+    
     # TRAIN THE NEURAL NETWORK.
     for (i in seq(1, k, 1)) {
         train <- shuf[-sel] # !psize selection of shuffled indices
         test <- shuf[sel] # psize selection of shuffled indices
         
         cat("Fold:",i,"\n")
-        cat("Training set BAC summary:\n")
-        print(summary(data[train,]$bac_observed))
-        cat("Test set BAC summary:\n")
-        print(summary(data[test,]$bac_observed))
         
-        mdl <- neuralnet(bac_observed ~
+        mdl <- nnet(bac_observed ~
             ms_heart_rate_bpm +
             ms_skin_temperature_celsius +
             ms_accelerometer_x +
             ms_accelerometer_y +
             ms_accelerometer_z,
             data=data[train,],
-            hidden=hidden
-        )
+            size=hidden,
+            linout=TRUE,
+            decay = 5e-4,
+            maxit=200
+        );
         
         features <- c(
             "ms_heart_rate_bpm",
@@ -376,7 +380,7 @@ runANN <- function(data, reduce, k, hidden, toFile=NULL) {
             "ms_accelerometer_z"
         )
     
-        data$pred <- compute(mdl, data[,features])$net.result
+        data$pred <- predict(mdl, data[,features])
     
         # EVALUATE PERFORMANCE.
         vvrsq <- rsq(data[train, ]$bac_observed, data[train, ]$pred)
@@ -388,6 +392,12 @@ runANN <- function(data, reduce, k, hidden, toFile=NULL) {
         perf <- rbind(perf, data.frame(vrsq=vrsq, vrmse=vrmse))
         cat("Test  R-SQ:",vrsq, "RMSE:", vrmse, "\n\n")
         
+        if (vrsq > bestTest.rsq) {
+            bestTest.rsq <- vrsq
+            bestTest <- data[test, ]
+            bestTest$x <- test
+        }
+        
         system(paste("say Fold", i, "calculated."))
         
         sel <- sel + psize
@@ -396,19 +406,16 @@ runANN <- function(data, reduce, k, hidden, toFile=NULL) {
     print(perf)
     
     cat("\nR-SQ:", mean(perf$vrsq), "+/-", sd(perf$vrsq), "\n")
-    cat("RMSE:", mean(perf$vrmse), "+/-", sd(perf$vrmse), "\n")
+    cat("RMSE:", mean(perf$vrmse), "+/-", sd(perf$vrmse), "\n\n")
     
     # PLOT THE PREDICTIONS.
-    #data$x <- rep(0, nrow(data))
-    #data[test,]$x <- 1:nrow(data[test,])
-    
-    #plt <- ggplot(data=data[test,]) +
-    #    geom_point(aes(x=x, y=bac_observed),
-    #    position=position_jitter(w=0.005, h=0.005), size=0.4) +
-    #    geom_point(aes(x=x, y=pred), color='blue', size=0.9) +
-    #    xlab("") +
-    #    ylab("Predicted vs. Actual (jittered)")
-    #ggsave("nn_all.png", plt, width=8, height=4)
+    cat("Plotting best scoring model on test data with R-SQ",bestTest.rsq,"\n")
+    plt <- ggplot(data=bestTest) +
+        geom_point(aes(x=x, y=pred), color='blue', size=0.9) +
+        geom_point(aes(x=x, y=bac_observed), size=0.8) +
+        xlab("") +
+        ylab("Predicted vs. Actual")
+    ggsave("nn_best_test.png", plt, width=8, height=4)
     
     if (!is.null(toFile)) sink()
     
