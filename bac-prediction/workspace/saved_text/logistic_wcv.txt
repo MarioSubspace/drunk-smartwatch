@@ -1,0 +1,51 @@
+k: 5 , bac-threshold: 0.065 
+
+
+Shuffling dataset.
+Normalizing columns per subject...
+
+Heart Rate Summary:
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+ 0.0000  0.2500  0.3500  0.3714  0.4839  1.0000 
+Skin Temperature Summary:
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+ 0.0000  0.4323  0.7545  0.6387  0.8522  1.0000 
+
+Applying BAC threshold...
+ DRUNK  SOBER 
+150458  83080 
+
+Running 5 fold cross-validation.
+Partition size: 46707 
+
+Fold: 1 
+% Drunk: 64.4 (train), 64.3 (test).
+PR: 0.8550782 REC: 0.7246222 F1: 0.7844635 
+
+Fold: 2 
+% Drunk: 64.4 (train), 64.7 (test).
+PR: 0.8555365 REC: 0.7280162 F1: 0.7866419 
+
+Fold: 3 
+% Drunk: 64.4 (train), 64.5 (test).
+PR: 0.8572314 REC: 0.7343999 F1: 0.791076 
+
+Fold: 4 
+% Drunk: 64.4 (train), 64.3 (test).
+PR: 0.8559141 REC: 0.7316919 F1: 0.7889431 
+
+Fold: 5 
+% Drunk: 64.5 (train), 64.3 (test).
+PR: 0.851885 REC: 0.7300493 F1: 0.7862754 
+
+       prec      recl        f1
+1 0.8550782 0.7246222 0.7844635
+2 0.8555365 0.7280162 0.7866419
+3 0.8572314 0.7343999 0.7910760
+4 0.8559141 0.7316919 0.7889431
+5 0.8518850 0.7300493 0.7862754
+
+Precision: 0.855129 +/- 0.001982986 
+Recall: 0.7297559 +/- 0.003700742 
+F1-score: 0.78748 +/- 0.002565374 
+
