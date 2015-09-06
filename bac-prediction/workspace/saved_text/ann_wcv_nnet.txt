@@ -1,0 +1,167 @@
+reduce: 1 , k: 5 
+hidden: 20 
+
+Shuffling dataset.
+Normalizing columns per subject...
+
+Heart Rate Summary:
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+ 0.0000  0.2500  0.3500  0.3714  0.4839  1.0000 
+Skin Temperature Summary:
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+ 0.0000  0.4323  0.7545  0.6387  0.8522  1.0000 
+
+Running 5 fold cross-validation.
+Partition size: 46707 
+
+Fold: 1 
+# weights:  141
+initial  value 17784.162621 
+iter  10 value 263.101563
+iter  20 value 178.884606
+iter  30 value 166.419432
+iter  40 value 161.164084
+iter  50 value 157.226133
+iter  60 value 154.506663
+iter  70 value 151.388764
+iter  80 value 146.178363
+iter  90 value 141.922138
+iter 100 value 139.635291
+iter 110 value 138.300050
+iter 120 value 137.314416
+iter 130 value 136.011961
+iter 140 value 134.252192
+iter 150 value 132.473768
+iter 160 value 131.049274
+iter 170 value 129.619913
+iter 180 value 128.482413
+iter 190 value 127.608378
+iter 200 value 126.688023
+final  value 126.688023 
+stopped after 200 iterations
+Train R-SQ: 0.5221878 RMSE: 0.02599435 
+Test  R-SQ: 0.525587 RMSE: 0.02600445 
+
+Fold: 2 
+# weights:  141
+initial  value 595457.572142 
+iter  10 value 247.794689
+iter  20 value 179.308765
+iter  30 value 170.949091
+iter  40 value 166.310478
+iter  50 value 163.228070
+iter  60 value 157.969971
+iter  70 value 153.664700
+iter  80 value 149.756166
+iter  90 value 145.727882
+iter 100 value 140.849647
+iter 110 value 136.672129
+iter 120 value 134.820643
+iter 130 value 133.227509
+iter 140 value 131.913435
+iter 150 value 131.119629
+iter 160 value 130.027214
+iter 170 value 128.574744
+iter 180 value 125.391076
+iter 190 value 123.222218
+iter 200 value 122.105395
+final  value 122.105395 
+stopped after 200 iterations
+Train R-SQ: 0.5417047 RMSE: 0.02548358 
+Test  R-SQ: 0.5458321 RMSE: 0.02534113 
+
+Fold: 3 
+# weights:  141
+initial  value 121428.671744 
+iter  10 value 380.188128
+iter  20 value 182.016562
+iter  30 value 173.269338
+iter  40 value 167.388054
+iter  50 value 162.216723
+iter  60 value 157.507424
+iter  70 value 152.236915
+iter  80 value 149.228307
+iter  90 value 146.664116
+iter 100 value 144.618400
+iter 110 value 142.964863
+iter 120 value 141.053414
+iter 130 value 138.944618
+iter 140 value 137.170055
+iter 150 value 135.934247
+iter 160 value 134.602154
+iter 170 value 133.504233
+iter 180 value 132.407045
+iter 190 value 131.522256
+iter 200 value 130.439444
+final  value 130.439444 
+stopped after 200 iterations
+Train R-SQ: 0.5093302 RMSE: 0.02637369 
+Test  R-SQ: 0.5097232 RMSE: 0.02630819 
+
+Fold: 4 
+# weights:  141
+initial  value 113501.332328 
+iter  10 value 283.920999
+iter  20 value 177.810786
+iter  30 value 170.657000
+iter  40 value 166.816177
+iter  50 value 163.415199
+iter  60 value 160.208294
+iter  70 value 155.483396
+iter  80 value 151.567905
+iter  90 value 147.163158
+iter 100 value 141.832998
+iter 110 value 138.182676
+iter 120 value 135.484200
+iter 130 value 133.257606
+iter 140 value 131.649398
+iter 150 value 129.747825
+iter 160 value 127.961111
+iter 170 value 127.085727
+iter 180 value 126.483759
+iter 190 value 126.021123
+iter 200 value 125.536390
+final  value 125.536390 
+stopped after 200 iterations
+Train R-SQ: 0.5275647 RMSE: 0.02586157 
+Test  R-SQ: 0.5294543 RMSE: 0.02584295 
+
+Fold: 5 
+# weights:  141
+initial  value 16866.560077 
+iter  10 value 198.994879
+iter  20 value 179.009842
+iter  30 value 170.783582
+iter  40 value 165.479810
+iter  50 value 160.903454
+iter  60 value 154.867232
+iter  70 value 152.550717
+iter  80 value 149.953166
+iter  90 value 146.073838
+iter 100 value 143.687008
+iter 110 value 141.541537
+iter 120 value 139.581732
+iter 130 value 137.857109
+iter 140 value 135.994771
+iter 150 value 134.505406
+iter 160 value 132.721480
+iter 170 value 131.024832
+iter 180 value 129.218701
+iter 190 value 128.102202
+iter 200 value 127.118661
+final  value 127.118661 
+stopped after 200 iterations
+Train R-SQ: 0.5217644 RMSE: 0.0260374 
+Test  R-SQ: 0.5111581 RMSE: 0.02626936 
+
+       vrsq      vrmse
+1 0.5255870 0.02600445
+2 0.5458321 0.02534113
+3 0.5097232 0.02630819
+4 0.5294543 0.02584295
+5 0.5111581 0.02626936
+
+R-SQ: 0.5243509 +/- 0.01480738 
+RMSE: 0.02595322 +/- 0.0003922322 
+
+Plotting best scoring model on test data with R-SQ 0.5458321 

@@ -18,6 +18,6 @@ Moving forward, we trained a SVM model using the Gaussian Radial Basis Function 
 
 So how does this do as a regression problem? We first considered the most basic: a linear regression model. This did not perform well at all. We next trained a neural network (ANN) model on the data. \begin{figure}
 	\includegraphics[width=1.0\textwidth]{../figs/nn_all}
-	\caption{ANN predictions (blue) over actual BAC (black, jitterred) using test data.}
+	\caption{ANN predictions (blue) with actual BAC data (black) on test partition.}
 	\label{fig:nn_all}
-\end{figure}This was even slower than the SVM which forced us to subsample to 8\% of the original data. The best performing ANN had a structure with two hidden layers of five nodes each. Figure \ref{fig:nn_all} plots the BAC predictions in of the neural network model on top of the actual values from the test set. The real values are jittered to give a sense of the density of the test data, the prediction values in blue are not. This model acheived a R$^2$ value of 0.525, with RMSE of 0.026. Much better than the linear regression model, but not nearly as good as the classification models.
+\end{figure}The best performing ANN had a structure with twenty nodes in one hidden layer. This was determined by doubling and then reducing node count to find the best performance. Additional layers did not show any improvement (the 'neuralnet' package was used to test multiple layers). Figure \ref{fig:nn_all} plots the BAC predictions of the ANN along with the actual values using data from a test partition. The ANN model achieved a R$^2$ value of 0.524 $\pm$ 0.015, with RMSE of 0.026 $\pm$ 0.000. It performed much better than the linear regression model, but not nearly as good as the classification models.
