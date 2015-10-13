@@ -7,7 +7,7 @@ Overall, our data set contains 233,538 samples that were collected from five vol
 We want to warn a person if they are close to reaching the legal limit of 0.08 BAC. A good time to warn a user is at about 0.065 BAC. Using this threshold, the classes are split into 64\% is \textit{DRUNK}, and 36\% \textit{SOBER}.
 
 To get a baseline, we first trained a logistic regression model. This model outputs values from 0.0 to 1.0, so we need to determine where to best split this output into each class. In Figure \ref{fig:log_pred_density}, we show a plot of the predictions of the model on the test data, using the actual labels to distinguish the output. \begin{figure}
-	\includegraphics[width=1.0\textwidth]{../figs/log_pred_density}
+	\includegraphics[width=1.0\textwidth]{figs/log_pred_density}
 	\caption{Logistic regression output frequency with actual labels}
 	\label{fig:log_pred_density}
 \end{figure}In this plot, we see that the best threshold value for the logistic model predictions is around 0.32; above that we classify \textit{SOBER} and below that \textit{DRUNK}. Using this, we achieved a precision of 0.855 $\pm$ 0.002, recall of 0.730 $\pm$ 0.004, and F1-score of 0.787 $\pm$ 0.003.
@@ -17,7 +17,7 @@ Moving forward, we trained a SVM model using the Gaussian Radial Basis Function 
 \subsection{Regression}
 
 So how does this do as a regression problem? We first considered the most basic: a linear regression model. This did not perform well at all. We next trained a neural network (ANN) model on the data. \begin{figure}
-	\includegraphics[width=1.0\textwidth]{../figs/nn_all}
+	\includegraphics[width=1.0\textwidth]{figs/nn_all}
 	\caption{ANN predictions (blue) with actual BAC data (black) on test partition}
 	\label{fig:nn_all}
 \end{figure}The best performing ANN had a structure with twenty nodes in one hidden layer. This was determined by doubling and then reducing node count to find the best performance. Additional layers did not show any improvement (the 'neuralnet' package was used to test multiple layers). Figure \ref{fig:nn_all} plots the BAC predictions of the ANN along with the actual values using data from a test partition. The ANN model achieved a R$^2$ value of 0.524 $\pm$ 0.015, with RMSE of 0.026 $\pm$ 0.000. It performed much better than the linear regression model, but not nearly as good as the classification models.
