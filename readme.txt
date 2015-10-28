@@ -31,7 +31,7 @@
     git update
 02] After making changes you can check the status of whats changed with:
     git status
-03] Stage files for a commit by running:
+03] Stage modified and new files for a commit by running:
     git add <filename>
     03a] Unstage files using:
          git reset <filename>
@@ -73,3 +73,19 @@
 01] Download and install R ( https://www.r-project.org/ ).
 02] Make sure the R binaries are in the system path. Installation should do this
     automatically for Mac, for Windows file should be in the Program Files dir.
+
+================================================================================
+   LaTeX Setup
+--------------------------------------------------------------------------------
+01] Easiest way is to download and use Texmaker to write and compile the paper.
+    01a] Note that the standard sequence to get references to show up is:
+         pdflatex > bibtex > pdflatex > pdflatex
+    01b] Otherwise you could just spam these until it works, the following
+         step discusses the command-line, makefile method.
+02] I've included a makefile if you want to use the command-line.
+    02a] First, make sure the LaTeX binaries are in the system path. You may
+         have to download them first if Texmaker isn't installed.
+    02b] In a Linux, Mac, or Cygwin terminal, 'cd' to the manuscript directory
+         and then run the following:
+         'make all' to compile the PDF of the paper, or
+         'make clean' to remove unnecessary generated files.
