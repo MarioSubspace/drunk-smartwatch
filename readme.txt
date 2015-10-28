@@ -15,7 +15,7 @@
          install a Unix-like environment like Cygwin, or an SSH client.
 
 ================================================================================
-  PROJECT CHECKOUT
+   PROJECT CHECKOUT
 --------------------------------------------------------------------------------
 01] Create a directory in which you want extract the project directory to.
     01a] I created a "Git" directory in my home directory for Git projects.
