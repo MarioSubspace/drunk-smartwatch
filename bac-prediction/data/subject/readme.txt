@@ -1,1 +1,9 @@
-This directory contains the cleaned and BAC-interpolated data of each volunteer. Each file corresponds to a particular volunteer. If for some reason you need the original tag number of the volunteer, run "wc -l" on the ##.csv file and on the raw/*/interpolated*.csv files to find the matching file.
+
+  README :: SUBJECT
+
+================================================================================
+   COMBINE.R
+--------------------------------------------------------------------------------
++ Takes the data files in this directory and concatenates them together.
++ To run:
+     Rscript combine.r <number_of_data_files> <output_file_name.csv>

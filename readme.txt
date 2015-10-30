@@ -1,5 +1,4 @@
 
-
   README :: OVERVIEW
 
 ================================================================================
@@ -15,14 +14,14 @@
          install a Unix-like environment like Cygwin, or an SSH client.
 
 ================================================================================
-   PROJECT CHECKOUT
+   PROJECT DOWNLOAD
 --------------------------------------------------------------------------------
 01] Create a directory in which you want extract the project directory to.
     01a] I created a "Git" directory in my home directory for Git projects.
 02] If you are not in the command-line, open it up and change directory "cd"
     into this directory.
-03] Check out the project files with the following command:
-    git checkout git@gitlab.cs.txstate.edu:mag262/drunk-smartwatch.git
+03] Download the project files with the following command:
+    git clone git@gitlab.cs.txstate.edu:mag262/drunk-smartwatch.git
 
 ================================================================================
    GIT WORKFLOW

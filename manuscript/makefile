@@ -5,4 +5,4 @@ all:
 	pdflatex -interaction=nonstopmode -halt-on-error paper.tex
 
 clean:
-	rm *.aux *.bbl *.blg *.dvi *.synctex.gz *.log
+	rm *.aux *.bbl *.blg *.log
