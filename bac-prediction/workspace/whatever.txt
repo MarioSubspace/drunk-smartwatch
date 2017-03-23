@@ -1,0 +1,57 @@
+k: 1 , bac-threshold: 0.65 
+
+
+Shuffling dataset.
+Normalizing columns per subject...
+
+Heart Rate Summary:
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+ 0.0000  0.2500  0.3500  0.3714  0.4839  1.0000 
+Skin Temperature Summary:
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+ 0.0000  0.4323  0.7545  0.6387  0.8522  1.0000 
+
+Applying BAC threshold...
+ SOBER 
+233538 
+
+Running 1 fold cross-validation.
+Partition size: 233538 
+
+Fold: 1 
+% Drunk: NaN (train), 0 (test).
+ [1] "ms_accelerometer_x"          "ms_accelerometer_y"         
+ [3] "ms_accelerometer_z"          "ms_gyroscope_acceleration_x"
+ [5] "ms_gyroscope_acceleration_y" "ms_gyroscope_acceleration_z"
+ [7] "ms_gyroscope_velocity_x"     "ms_gyroscope_velocity_y"    
+ [9] "ms_gyroscope_velocity_z"     "ms_distance_pace"           
+[11] "ms_distance_speed"           "ms_distance_total_distance" 
+[13] "ms_distance_motion_type"     "ms_heart_rate_bpm"          
+[15] "ms_heart_rate_quality"       "ms_pedometer_steps"         
+[17] "ms_skin_temperature_celsius" "ms_ultraviolet_level"       
+[19] "ms_contact_state"            "ms_calories_burned"         
+[21] "location_accuracy"           "location_altitude"          
+[23] "location_bearing"            "location_latitude"          
+[25] "location_longitude"          "location_provider"          
+[27] "location_speed"              "location_time"              
+[29] "button_touch_label"          "button_touch_event"         
+[31] "button_touch_timestamp"      "timestamp"                  
+[33] "bac_observed"                "subject"                    
+ [1] "ms_accelerometer_x"          "ms_accelerometer_y"         
+ [3] "ms_accelerometer_z"          "ms_gyroscope_acceleration_x"
+ [5] "ms_gyroscope_acceleration_y" "ms_gyroscope_acceleration_z"
+ [7] "ms_gyroscope_velocity_x"     "ms_gyroscope_velocity_y"    
+ [9] "ms_gyroscope_velocity_z"     "ms_distance_pace"           
+[11] "ms_distance_speed"           "ms_distance_total_distance" 
+[13] "ms_distance_motion_type"     "ms_heart_rate_bpm"          
+[15] "ms_heart_rate_quality"       "ms_pedometer_steps"         
+[17] "ms_skin_temperature_celsius" "ms_ultraviolet_level"       
+[19] "ms_contact_state"            "ms_calories_burned"         
+[21] "location_accuracy"           "location_altitude"          
+[23] "location_bearing"            "location_latitude"          
+[25] "location_longitude"          "location_provider"          
+[27] "location_speed"              "location_time"              
+[29] "button_touch_label"          "button_touch_event"         
+[31] "button_touch_timestamp"      "timestamp"                  
+[33] "bac_observed"                "subject"                    
+[1] 233538
